@@ -22,12 +22,7 @@
       font-size: 1.8rem;
       font-weight: 300;
     }
-    polyfill-next-selector { content: '.card-header img'; }
-    .card-header ::content img {
-      width: 70px;
-      border-radius: 50%;
-      margin: 10px;
-    }
+
     core-icon-button {
       position: absolute;
       top: 3px;
@@ -41,7 +36,6 @@
 
     <div class="card-header" layout horizontal center>
 
-      <content select="img"></content>
       <content select="h2"></content>
 
     </div>
@@ -54,7 +48,7 @@
 
     <content></content>
 
-    
+
   </template>
   <script>
   Polymer({
