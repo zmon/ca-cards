@@ -16,13 +16,14 @@
         <style>
             paper-shadow,
             core-animated-pages section {
-                height: 200px;
+                height: 300px;
                 background-color: yellow;
-                width: 500px;
+                width: 350px;
             }
             core-animated-pages section {
                 overflow: hidden;
             }
+            h2,
             h3 {
                 font-weight: 300;
                 font-size: 26px;
@@ -30,12 +31,17 @@
                 padding: 0;
                 padding-bottom: 10px;
             }
+            h2 {
+              padding: 10px;
+              margin: 10px;
+            }
             .card-content,
             .card-reveal {
-                padding: 20px;
+                padding: 40px;
+                padding-top: 10px;
                 background: white;
-                font-size: 8pt;
 
+  height: 300px;
             }
             a {
                 color: orange;
@@ -65,19 +71,21 @@
                 </section>
                 <section>
                     <div class="card-reveal" slide-up cross-fade>
+                      <div>
+                              <content select="h2"></content>
+                          <div>
                         <div layout horizontal>
                             <div flex>
-
+ssss
                                 <content></content>
                             </div>
                             <div>
                                 <paper-icon-button on-tap="{{reveal}}" icon="close"></paper-icon-button>
                             </div>
                         </div>
-                        <div>
-                            {{item.more}}
-                        </div>
                     </div>
+                    </div>
+                </div>
                 </section>
             </core-animated-pages>
         </paper-shadow>
