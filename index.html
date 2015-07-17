@@ -18,6 +18,7 @@
   <link rel="import"
     href="components/paper-tabs/paper-tabs.html">
   <link rel="import" href="post-list.html">
+  <link rel="import" href="card-reveal.html">
 
   <style>
   html,body {
@@ -29,7 +30,7 @@
   core-header-panel {
     height: 100%;
     overflow: auto;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
   }
   core-toolbar {
     background: #03a9f4;
@@ -74,6 +75,7 @@
     </core-toolbar>
 
     <div class="container" layout vertical center>
+      <card-reveal></card-reveal>
       <post-list show="all"></post-list>
     </div>
 
