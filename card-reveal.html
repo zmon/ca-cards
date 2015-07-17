@@ -2,7 +2,7 @@
 
 <link rel="import" href="components/polymer/polymer.html">
 <link rel="import" href="components/paper-shadow/paper-shadow.html">
-<link rel="import" href="components/font-roboto/roboto.html">
+
 <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="components/core-animated-pages/transitions/slide-up.html">
@@ -16,9 +16,10 @@
         <style>
             paper-shadow,
             core-animated-pages section {
-                height: 300px;
-                background-color: yellow;
-                width: 350px;
+
+            background-color: #3F51B5;
+
+
             }
             core-animated-pages section {
                 overflow: hidden;
@@ -30,10 +31,13 @@
                 margin: 0;
                 padding: 0;
                 padding-bottom: 10px;
+
+
             }
             h2 {
               padding: 10px;
               margin: 10px;
+              color: #ffffff;
             }
             .card-content,
             .card-reveal {
@@ -41,7 +45,7 @@
                 padding-top: 10px;
                 background: white;
 
-  height: 300px;
+
             }
             a {
                 color: orange;
@@ -49,8 +53,8 @@
             }
         </style>
         <paper-shadow>
-            <core-animated-pages transitions="slide-up" selected="{{selected}}">
-                <section>
+
+
                     <div>
 				                    <content select="h2"></content>
                         <div>
@@ -68,26 +72,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
-                <section>
-                    <div class="card-reveal" slide-up cross-fade>
-                      <div>
-                              <content select="h2"></content>
-                          <div>
-                        <div layout horizontal>
-                            <div flex>
-ssss
-                                <content></content>
-                            </div>
-                            <div>
-                                <paper-icon-button on-tap="{{reveal}}" icon="close"></paper-icon-button>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </section>
-            </core-animated-pages>
+
         </paper-shadow>
     </template>
 

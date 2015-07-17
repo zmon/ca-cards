@@ -16,7 +16,7 @@
     <div layout vertical center>
       <template repeat="{{post in clauses}}">
         <card-reveal favorite="{{post.favorite}}" on-favorite-tap="{{handleFavorite}}" hidden?="{{show == 'favorites' && !post.favorite}}">
-          <h2 style="padding-left: 10px; padding-top: 10px;">{{post.name}}</h2>
+          <h2 style="padding-left: 10px; padding-top: 10px; color: #fff; ">{{post.name}}</h2>
           <p>{{post.content}}</p>
           <h3>Source:</h3>
           <p>{{post.source}}</p>
