@@ -1,43 +1,37 @@
 <link rel="import" href="components/polymer/polymer.html">
 <link rel="import" href="post-service/post-service.html">
-<link rel="import" href="post-card.html">
+<link rel="import" href="card-reveal.html">
 
 <polymer-element name="post-list" attributes="show">
   <template>
     <style>
-    :host {
-      display: block;
-      width: 100%;
-    }
-    post-card {
-      margin-bottom: 30px;
-    }
+      :host {
+        display: block;
+        width: 100%;
+      }
     </style>
 
     <post-service id="service" posts="{{clauses}}"></post-service>
 
     <div layout vertical center>
       <template repeat="{{post in clauses}}">
-        <post-card
-          favorite="{{post.favorite}}"
-          on-favorite-tap="{{handleFavorite}}"
-          hidden?="{{show == 'favorites' && !post.favorite}}">
+        <card-reveal favorite="{{post.favorite}}" on-favorite-tap="{{handleFavorite}}" hidden?="{{show == 'favorites' && !post.favorite}}">
           <h2>{{post.name}}</h2>
           <p>{{post.content}}</p>
           <h3>Source:</h3>
           <p>{{post.source}}</p>
           <a href="{{post.http}}">URL</a>
-        </post-card>
+        </card-reveal>
       </template>
     </div>
   </template>
 
   <script>
-  Polymer({
-    handleFavorite: function(event, detail, sender) {
-      var post = sender.templateInstance.model.post;
-      this.$.service.setFavorite(post.uid, post.favorite);
-    }
-  });
+    Polymer({
+      handleFavorite: function(event, detail, sender) {
+        var post = sender.templateInstance.model.post;
+        this.$.service.setFavorite(post.uid, post.favorite);
+      }
+    });
   </script>
 </polymer-element>

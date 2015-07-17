@@ -9,6 +9,8 @@
 <link rel="import" href="components/core-animated-pages/transitions/slide-down.html">
 <link rel="import" href="components/core-animated-pages/transitions/cross-fade.html">
 
+<link rel="import" href="components/core-icon-button/core-icon-button.html">
+
 <polymer-element name="card-reveal" center layout>
     <template>
         <style>
@@ -32,7 +34,8 @@
             .card-reveal {
                 padding: 20px;
                 background: white;
-                height: 500px;
+                font-size: 8pt;
+
             }
             a {
                 color: orange;
@@ -43,18 +46,19 @@
             <core-animated-pages transitions="slide-up" selected="{{selected}}">
                 <section>
                     <div>
-				<h1>this is text</h1>
+				                    <content select="h2"></content>
                         <div>
                             <div class="card-content">
                                 <div layout horizontal>
                                     <div flex>
-                                        <h3>{{item.title}}</h3>
+
+                                        <content></content>
                                     </div>
                                     <div>
                                         <paper-icon-button on-tap="{{reveal}}" icon="more-vert"></paper-icon-button>
                                     </div>
                                 </div>
-                                <a>This is a link</a>
+
                             </div>
                         </div>
                     </div>
@@ -63,7 +67,8 @@
                     <div class="card-reveal" slide-up cross-fade>
                         <div layout horizontal>
                             <div flex>
-                                <h3>{{item.title}}</h3>
+
+                                <content></content>
                             </div>
                             <div>
                                 <paper-icon-button on-tap="{{reveal}}" icon="close"></paper-icon-button>
@@ -80,12 +85,16 @@
 
     <script>
         Polymer({
-            created: function () {
-                this.item = {
-                    title: "Card Title",
-                    more: "Here is some more information about this product that is only revealed once clicked on."
-                };
-            },
+          publish: {
+            favorite: {
+              value: false,
+              reflect: true
+            }
+          },
+          favoriteTapped: function(event, detail, sender) {
+            this.favorite = !this.favorite;
+            this.fire('favorite-tap');
+          },
             reveal: function () {
                 if (this.selected == 0) {
                     this.selected = 1;
